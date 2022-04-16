@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Common Styles */
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Commissioner', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* End of Common Styles */
+
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  padding: 3rem 6rem;
+}
+
+.navbar .navbar-group a {
+  cursor: pointer;
+  color: #fff;
+  margin: 0 2rem;
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* Navbar Responsiveness */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 2rem;
+  }
+
+  .navbar .navbar-group a {
+    margin: 0 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .navbar-group {
+    position: absolute;
+    top: -100%;
+    left: 5rem;
+    width: 80%;
+    background-color: #fff;
+    transition: top 0.7s;
+  }
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+  .navbar.show .navbar-group {
+    position: absolute;
+    top: 105%;
+    left: 5rem;
+    width: 80%;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .navbar.show .navbar-group .navitem {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0 0 1rem 1rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.267);
+  }
+
+  .navbar.show .navbar-group .navitem:last-of-type {
+    border: none;
+  }
+
+  .navbar.show .navbar-group a {
+    color: #000;
+  }
+}
+/* End of Navbar Responsiveness */
+/* End of Navbar */
+
+/* Header */
+.header {
+  width: 100%;
+  height: 40vh;
+  background: url(images/image-hero-desktop.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* End of Header */
+
+/* Content Section */
+.content-container {
+  width: 60%;
+  margin: auto;
+  transform: translateY(-10rem);
+}
+/* Section 1 */
+.section-1 {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 4rem 0 2rem 0;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.section-1::after {
+  content: '';
+  position: absolute;
+  top: -3.65rem;
+  left: 50%;
+  transform: translate(-50%);
+  background: url(images/logo-mastercraft.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 75px;
+  height: 75px;
+}
+
+.section-1 h1 {
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+.section-1 p {
+  font-size: 1.9rem;
+  letter-spacing: 0.1rem;
+  margin: 1rem 0;
+  color: hsl(0, 0%, 48%);
+  text-align: center;
+}
+
+.section-1 .buttons {
+  width: 80%;
+  margin: 1rem 0;
+  justify-content: space-between;
+}
+
+.section-1 .buttons .back-this-project {
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
+  font-size: 2rem;
+  width: 20rem;
+  height: 5rem;
+  border-radius: 4rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.section-1 .buttons .bookmark-container {
+  position: relative;
+  background-color: rgb(0, 0, 0, 0.1);
+  width: 20rem;
+  height: 5rem;
+  border-radius: 4rem;
+  cursor: pointer;
+}
+
+.section-1 .buttons .bookmark-container i {
+  background-color: hsl(176, 50%, 47%);
+  color: rgb(255, 255, 255);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.section-1 .buttons .bookmark-container a {
+  color: rgb(143, 143, 143);
+  margin-right: 0.5rem;
+  color: hsl(176, 50%, 47%);
+  font-weight: 600;
+  transform: translateX(1.5rem);
+}
+
+/* End of  Responsiveness */
+@media (max-width: 1300px) {
+  .content-container {
+    width: 70%;
+  }
+}
+@media (max-width: 1100px) {
+  .content-container {
+    width: 80%;
+  }
+  .section-1 .buttons {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .section-1 {
+    max-width: 750px;
+  }
+  .content-container {
+    width: 90%;
+  }
+  .section-1 .buttons {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .section-1 h1 {
+    font-size: 3.5rem;
+  }
+  .section-1 p {
+    font-size: 1.6rem;
+    letter-spacing: 0rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .section-1 h1 {
+    font-size: 2.5rem;
+  }
+  .section-1 p {
+    font-size: 1.6rem;
+    letter-spacing: 0rem;
+    text-align: center;
+    width: 90%;
+  }
+}
+
+@media (max-width: 550px) {
+  .section-1 .buttons .bookmark-container {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 4rem;
+    margin-right: 2rem;
+  }
+  .section-1 .buttons .bookmark-container a {
+    display: none;
+  }
+}
+/* End of Section 1 */
+
+/* Section 2 */
+.section-2 {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 4rem 0 2rem 0;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.section-2 .digit-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.section-2 .digit-info .money,
+.section-2 .digit-info .backers,
+.section-2 .digit-info .days {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 3rem;
+}
+
+.section-2 .digit-info .money .numbers,
+.section-2 .digit-info .backers .numbers,
+.section-2 .digit-info .days .numbers {
+  font-size: 4rem;
+}
+
+.section-2 .digit-info .money p,
+.section-2 .digit-info .backers p,
+.section-2 .digit-info .days p {
+  color: hsl(0, 0%, 48%);
+  letter-spacing: 0.1rem;
+}
+
+.section-2 .percent-line {
+  margin: 2rem 0;
+  width: 90%;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: hsla(0, 0%, 48%, 0.411);
+  position: relative;
+}
+
+.section-2 .percent-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: hsl(176, 72%, 28%);
+}
+
+@media (max-width: 1000px) {
+  .section-2 {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-2 {
+    max-width: 750px;
+  }
+  .section-2 .digit-info {
+    flex-direction: column;
+  }
+}
+/* End of Section 2 */
+
+/* Section 3 */
+.section-3 {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 4rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-3 h3 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.section-3 p {
+  color: hsl(0, 0%, 48%);
+}
+
+.section-3 .section-3-description {
+  margin-bottom: 2rem;
+}
+
+.package {
+  padding: 2.5rem;
+  border: 0.1rem solid hsla(0, 0%, 48%, 0.411);
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+}
+
+.package .package-header {
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.package .package-header h4 {
+  font-size: 2.2rem;
+}
+.package .package-header p {
+  font-size: 1.8rem;
+  color: hsl(176, 50%, 47%);
+}
+
+.package p {
+  margin-bottom: 2rem;
+}
+
+.package .package-footer {
+  justify-content: space-between;
+}
+
+.package .package-footer h5 {
+  color: hsl(0, 0%, 48%);
+  font-weight: 300;
+}
+
+.package .package-footer h5 span {
+  font-weight: 500;
+  font-size: 2.6rem;
+  margin-right: 1rem;
+  color: #000;
+}
+
+.package .package-footer a {
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
+  font-size: 2rem;
+  width: 20rem;
+  height: 5rem;
+  border-radius: 4rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.package:last-of-type {
+  opacity: 0.5;
+  user-select: none;
+}
+
+.package:last-of-type .package-footer a {
+  pointer-events: none;
+  cursor: default;
+  background-color: hsl(0, 0%, 48%);
+}
+
+@media (max-width: 550px) {
+  .package-header,
+  .package-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .package-header h4,
+  .package-footer h5 {
+    margin-bottom: 1rem;
+  }
+}
+/* End of Section 3 */
+
+/* End of Content Section */
